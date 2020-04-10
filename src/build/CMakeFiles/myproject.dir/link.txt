@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/myproject.dir/kernels/kernelmat.cpp.o  -o myproject -Wl,-rpath,/home/mrjoeybux/programs/miniconda3/envs/mypy/lib /home/mrjoeybux/programs/miniconda3/envs/mypy/lib/libpython3.7m.so 
