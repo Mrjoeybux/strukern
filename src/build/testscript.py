@@ -1,6 +1,6 @@
-import struker
+import strukern
 import numpy as np
-string = struker.DiracStringKernel()
+string = strukern.DiracStringKernel()
 a = ["hi", "hello", "bye", "hi"]
 K = string.computeKernelMatrix(a, {})
 """for i in range(K.shape[0]):

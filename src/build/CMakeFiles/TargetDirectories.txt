@@ -1,3 +1,3 @@
-/home/mrjoeybux/coding/struker/src/build/CMakeFiles/rebuild_cache.dir
-/home/mrjoeybux/coding/struker/src/build/CMakeFiles/struker.dir
-/home/mrjoeybux/coding/struker/src/build/CMakeFiles/edit_cache.dir
+/home/mrjoeybux/coding/strukern/src/build/CMakeFiles/rebuild_cache.dir
+/home/mrjoeybux/coding/strukern/src/build/CMakeFiles/strukern.dir
+/home/mrjoeybux/coding/strukern/src/build/CMakeFiles/edit_cache.dir

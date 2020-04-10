@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mrjoeybux/coding/struker/src
+CMAKE_SOURCE_DIR = /home/mrjoeybux/coding/strukern/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mrjoeybux/coding/struker/src/build
+CMAKE_BINARY_DIR = /home/mrjoeybux/coding/strukern/src/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrjoeybux/coding/struker/src/build/CMakeFiles /home/mrjoeybux/coding/struker/src/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrjoeybux/coding/strukern/src/build/CMakeFiles /home/mrjoeybux/coding/strukern/src/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrjoeybux/coding/struker/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrjoeybux/coding/strukern/src/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named struker
+# Target rules for targets named strukern
 
 # Build rule for target.
-struker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 struker
-.PHONY : struker
+strukern: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 strukern
+.PHONY : strukern
 
 # fast build rule for target.
-struker/fast:
-	$(MAKE) -f CMakeFiles/struker.dir/build.make CMakeFiles/struker.dir/build
-.PHONY : struker/fast
+strukern/fast:
+	$(MAKE) -f CMakeFiles/strukern.dir/build.make CMakeFiles/strukern.dir/build
+.PHONY : strukern/fast
 
-binding/struker.o: binding/struker.cpp.o
+binding/strukern.o: binding/strukern.cpp.o
 
-.PHONY : binding/struker.o
+.PHONY : binding/strukern.o
 
 # target to build an object file
-binding/struker.cpp.o:
-	$(MAKE) -f CMakeFiles/struker.dir/build.make CMakeFiles/struker.dir/binding/struker.cpp.o
-.PHONY : binding/struker.cpp.o
+binding/strukern.cpp.o:
+	$(MAKE) -f CMakeFiles/strukern.dir/build.make CMakeFiles/strukern.dir/binding/strukern.cpp.o
+.PHONY : binding/strukern.cpp.o
 
-binding/struker.i: binding/struker.cpp.i
+binding/strukern.i: binding/strukern.cpp.i
 
-.PHONY : binding/struker.i
+.PHONY : binding/strukern.i
 
 # target to preprocess a source file
-binding/struker.cpp.i:
-	$(MAKE) -f CMakeFiles/struker.dir/build.make CMakeFiles/struker.dir/binding/struker.cpp.i
-.PHONY : binding/struker.cpp.i
+binding/strukern.cpp.i:
+	$(MAKE) -f CMakeFiles/strukern.dir/build.make CMakeFiles/strukern.dir/binding/strukern.cpp.i
+.PHONY : binding/strukern.cpp.i
 
-binding/struker.s: binding/struker.cpp.s
+binding/strukern.s: binding/strukern.cpp.s
 
-.PHONY : binding/struker.s
+.PHONY : binding/strukern.s
 
 # target to generate assembly for a file
-binding/struker.cpp.s:
-	$(MAKE) -f CMakeFiles/struker.dir/build.make CMakeFiles/struker.dir/binding/struker.cpp.s
-.PHONY : binding/struker.cpp.s
+binding/strukern.cpp.s:
+	$(MAKE) -f CMakeFiles/strukern.dir/build.make CMakeFiles/strukern.dir/binding/strukern.cpp.s
+.PHONY : binding/strukern.cpp.s
 
 # Help Target
 help:
@@ -157,11 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... struker"
+	@echo "... strukern"
 	@echo "... edit_cache"
-	@echo "... binding/struker.o"
-	@echo "... binding/struker.i"
-	@echo "... binding/struker.s"
+	@echo "... binding/strukern.o"
+	@echo "... binding/strukern.i"
+	@echo "... binding/strukern.s"
 .PHONY : help
 
 
