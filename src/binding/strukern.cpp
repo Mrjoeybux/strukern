@@ -1,11 +1,13 @@
-#include <iostream>
-#include <pybind11/pybind11.h>
-#include <pybind11/eigen.h>
+#include "./graphbinding.h"
+#include "./imagekernelbinding.h"
+#include "./stringkernelbinding.h"
+//#include <iostream>
+//
+#include <pybind11/pytypes.h>
 #include <pybind11/stl.h>
-#include <Eigen/Dense>
-#include <vector>
 #include <string>
-#include "../kernels/basekernel.h"
+#include <unordered_map>
+#include <vector>
 
 using namespace Eigen;
 namespace py = pybind11;
@@ -13,17 +15,16 @@ using namespace std;
 using namespace pybind11::literals;
 
 PYBIND11_MODULE(strukern, m) {
-    py::class_<Kernel<string>>(m, "AbstractStringKernel")
-        .def_static("normaliseHilbert", &Kernel<string>::normaliseHilbert)
-        .def_static("normaliseKrein", &Kernel<string>::normaliseKrein);
 
-    py::class_<DiracKernel<string>, Kernel<string>>(m, "DiracStringKernel")
-        .def(py::init<>())
-        .def("dot", &DiracKernel<string>::dot)
-        .def("computeKernelMatrix", &DiracKernel<string>::computeKernelMatrix);
-    
-    /*py::class_<Kernel<double>>(m, "AbstractDoubleKernel");
-    py::class_<DiracKernel<double>, Kernel<double>>(m, "DiracDoubleKernel")
-        .def(py::init<>())
-        .def("dot", &DiracKernel<double>::dot);*/
+  string i = "i", d = "d", s = "s";
+  declare_graph<int, int>(m, i, i);
+  declare_graph<double, double>(m, d, d);
+  declare_graph<string, string>(m, s, s);
+
+  // auto gk = m.def_submodule("graphkernels");
+  auto sk = m.def_submodule("stringkernels");
+  auto ik = m.def_submodule("imagekernels");
+  // auto ik = m.def_submodule("imagekernels");
+  declare_stringkernels(sk);
+  declare_imagekernels(ik);
 };

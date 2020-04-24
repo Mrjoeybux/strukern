@@ -90,6 +90,11 @@ strukern_EXTERNAL_OBJECTS =
 
 strukern.cpython-37m-x86_64-linux-gnu.so: CMakeFiles/strukern.dir/binding/strukern.cpp.o
 strukern.cpython-37m-x86_64-linux-gnu.so: CMakeFiles/strukern.dir/build.make
+strukern.cpython-37m-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libz.so
+strukern.cpython-37m-x86_64-linux-gnu.so: /home/mrjoeybux/programs/gedlib/ext/nomad.3.8.1/lib/libnomad.so
+strukern.cpython-37m-x86_64-linux-gnu.so: /home/mrjoeybux/programs/gedlib/ext/libsvm.3.22/libsvm.so
+strukern.cpython-37m-x86_64-linux-gnu.so: /home/mrjoeybux/programs/gedlib/ext/fann.2.2.0/lib/libdoublefann.so
+strukern.cpython-37m-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libjpeg.so
 strukern.cpython-37m-x86_64-linux-gnu.so: CMakeFiles/strukern.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mrjoeybux/coding/strukern/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module strukern.cpython-37m-x86_64-linux-gnu.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/strukern.dir/link.txt --verbose=$(VERBOSE)

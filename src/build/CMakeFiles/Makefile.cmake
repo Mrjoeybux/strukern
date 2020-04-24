@@ -7,6 +7,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/mrjoeybux/coding/libs/eigen/build/Eigen3Config.cmake"
+  "/home/mrjoeybux/coding/libs/eigen/build/Eigen3ConfigVersion.cmake"
+  "/home/mrjoeybux/coding/libs/eigen/build/Eigen3Targets.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/3.10.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
@@ -32,10 +35,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.10/Modules/FindJPEG.cmake"
   "/usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.10/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.10/Modules/FindPythonInterp.cmake"
   "/usr/share/cmake-3.10/Modules/FindPythonLibs.cmake"
+  "/usr/share/cmake-3.10/Modules/FindZLIB.cmake"
   "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU.cmake"

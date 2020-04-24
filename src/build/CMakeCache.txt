@@ -24,6 +24,9 @@ CMAKE_BUILD_TYPE:STRING=
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
+//No help, variable specified on the command line.
+CMAKE_COMPLIE_COMMANDS:UNINITIALIZED=1
+
 //CXX compiler
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
@@ -94,7 +97,7 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Enable/Disable output of compile commands during generation.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=1
 
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
@@ -187,6 +190,12 @@ Eigen3_DIR:PATH=/home/mrjoeybux/coding/libs/eigen/build
 //Dependencies for target
 Eigen3_LIB_DEPENDS:STATIC=
 
+//Path to a file.
+JPEG_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+JPEG_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libjpeg.so
+
 //Dependencies for target
 KernelMatrix_LIB_DEPENDS:STATIC=
 
@@ -204,6 +213,18 @@ PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 
 //Path to a library.
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
+
+//The directory containing a CMake configuration file for jpeg.
+jpeg_DIR:PATH=jpeg_DIR-NOTFOUND
 
 //Dependencies for target
 kernelMatrix_LIB_DEPENDS:STATIC=
@@ -223,8 +244,8 @@ pybind11_DIR:PATH=/usr/local/share/cmake/pybind11
 //Value Computed by CMake
 strukern_BINARY_DIR:STATIC=/home/mrjoeybux/coding/strukern/src/build
 
-//Dependencies for target
-strukern_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+strukern_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/home/mrjoeybux/programs/gedlib//ext/nomad.3.8.1/lib/libnomad.so;general;/home/mrjoeybux/programs/gedlib//ext/libsvm.3.22/libsvm.so;general;/home/mrjoeybux/programs/gedlib//ext/fann.2.2.0/lib/libdoublefann.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;
 
 //Value Computed by CMake
 strukern_SOURCE_DIR:STATIC=/home/mrjoeybux/coding/strukern/src
@@ -369,14 +390,22 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding JPEG
+FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libjpeg.so][/usr/include][v()]
 //Details about finding PYTHON
 FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/home/mrjoeybux/programs/miniconda3/envs/mypy/bin/python3.7
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/home/mrjoeybux/programs/miniconda3/envs/mypy/bin/python3.7][v3.7.7()]
 //Details about finding PythonLibs
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython3.6m.so][/usr/include/python3.6m][v3.6.9()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][v1.2.11()]
 //Test HAS_FLTO
 HAS_FLTO:INTERNAL=1
+//ADVANCED property for variable: JPEG_INCLUDE_DIR
+JPEG_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: JPEG_LIBRARY
+JPEG_LIBRARY-ADVANCED:INTERNAL=1
 PYBIND11_LTO_CXX_FLAGS:INTERNAL=-flto;-fno-fat-lto-objects
 PYBIND11_LTO_LINKER_FLAGS:INTERNAL=-flto
 //ADVANCED property for variable: PYTHON_EXECUTABLE
@@ -387,4 +416,10 @@ PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
 PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 
