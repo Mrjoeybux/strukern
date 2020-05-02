@@ -1,5 +1,6 @@
 #ifndef GRAPH
 #define GRAPH
+#include "common.h"
 #include "src/env/ged_env.hpp"
 #include <functional>
 #include <iostream>
@@ -8,12 +9,6 @@
 #include <unordered_map>
 #include <vector>
 using namespace std;
-
-struct pair_hash {
-  template <typename T1, typename T2> size_t operator()(const pair<T1, T2> &pair) const {
-    return hash<T1>()(pair.first) ^ hash<T2>()(pair.second);
-  }
-};
 
 template <typename N = int, typename E = int> class Graph {
 private:
@@ -50,7 +45,7 @@ public:
 
   optional<vector<E>> getEdgeAttribute(const uint &index1, const uint &index2) const;
 
-  string AsString() const;
+  // string AsString() const;
 
   ged::GEDGraph::GraphID AddToGEDLIB(ged::GEDEnv<ged::GXLNodeID, ged::GXLLabel, ged::GXLLabel> &env,
                                      const vector<string> &NodeAttributeNames, const vector<string> &EdgeAttributeNames) const;

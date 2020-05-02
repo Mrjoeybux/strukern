@@ -90,6 +90,7 @@ strukern_EXTERNAL_OBJECTS =
 
 strukern.cpython-37m-x86_64-linux-gnu.so: CMakeFiles/strukern.dir/binding/strukern.cpp.o
 strukern.cpython-37m-x86_64-linux-gnu.so: CMakeFiles/strukern.dir/build.make
+strukern.cpython-37m-x86_64-linux-gnu.so: /home/mrjoeybux/programs/gedlib/lib/libgxlgedlib.so
 strukern.cpython-37m-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libz.so
 strukern.cpython-37m-x86_64-linux-gnu.so: /home/mrjoeybux/programs/gedlib/ext/nomad.3.8.1/lib/libnomad.so
 strukern.cpython-37m-x86_64-linux-gnu.so: /home/mrjoeybux/programs/gedlib/ext/libsvm.3.22/libsvm.so

@@ -1,7 +1,8 @@
 import strukern
 import numpy as np
 import sys
-
+import time
+import imageio
 def test_eigen():
     string = strukern.stringkernels.TestCompressionKernel()
     #string = strukern.DiracStringKernel()
@@ -28,7 +29,7 @@ def test_graph():
     print(g)
         #print(g.getNodeAttribute(i))
 
-def test_image():
+def test_mnist_image():
     path = "/home/mrjoeybux/coding/strukern/src/mnist_image_converted.dat"
     vals = []
     f = open(path, "r")
@@ -36,8 +37,45 @@ def test_image():
         vals.append(int(line.split("\n")[0]))
     X = np.array(vals)
     X = np.resize(X, (28, 28))
-    jp = strukern.imagekernels.vJPEGCompressionKernel()
-    assert jp.compress(X, 1) == 610.0
+    method = strukern.imagekernels.ImageCompressionMethod
+    jp = strukern.imagekernels.JPEGCompressionKernel(method.Vertical)
+    params = strukern.KernelParams()
+    params.JPEGCompressionQuality = 100
+   #print(params.JPEGCompressionQuality)
+    print(jp.dot(X, X, params))
+    n = 1000
+    times = []
+    """for i in range(n):
+        start = time.time()
+        jp.dot(X, X, {"compressionlevel" : 1})
+        times.append(time.time() - start)
+    print("Mean Execution time: {0:.3g} +/- {1:.3g}".format(np.mean(times), np.std(times)))
+    print("Total Execution time: {0:.3g}".format(np.sum(times)))"""
+
+def test_large_image():
+    path = "/home/mrjoeybux/coding/strukern/src/build/random_black_and_white.png"
+    X = imageio.imread(path)
+    X = X[:, :, 0]
+    method = strukern.imagekernels.ImageCompressionMethod
+    jp = strukern.imagekernels.JPEGCompressionKernel(method.Vertical)
+    n = 10
+    times = []
+    for i in range(n):
+        start = time.time()
+        jp.dot(X, X, {"compressionlevel" : 1})
+        times.append(time.time() - start)
+    print("Mean Execution time: {0:.3g} +/- {1:.3g}".format(np.mean(times), np.std(times)))
+    print("Total Execution time: {0:.3g}".format(np.sum(times)))
+
+def test_multi_instance_ged():
+    if __name__ == '__main__':
+        gk = strukern.graphkernels
+        ged_meth = gk.GEDMethods.BIPARTITE
+        ged_ec = gk.GEDEditCosts.MABTS
+        ged = gk.GEDKernel(ged_ec, ged_meth, "")
+        multi_meth = strukern.MultiInstanceMethod.Sum
+        ged_multi = strukern.GEDMultiInstance(ged, multi_meth)
+
 
 if __name__ == "__main__":
     inp = int(sys.argv[1])
@@ -46,4 +84,8 @@ if __name__ == "__main__":
     elif inp == 1:
         test_graph()
     elif inp == 2:
-        test_image()
+        test_mnist_image()
+    elif inp == 3:
+        test_large_image()
+    elif inp == 4:
+        test_multi_instance_ged()

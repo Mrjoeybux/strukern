@@ -3,11 +3,26 @@
 
 CMakeFiles/strukern.dir/binding/strukern.cpp.o
  /home/mrjoeybux/coding/strukern/src/binding/./graphbinding.h
+ /home/mrjoeybux/coding/strukern/src/binding/./graphkernelbinding.h
  /home/mrjoeybux/coding/strukern/src/binding/./imagekernelbinding.h
  /home/mrjoeybux/coding/strukern/src/binding/./stringkernelbinding.h
  /home/mrjoeybux/coding/strukern/src/binding/strukern.cpp
+ /home/mrjoeybux/coding/strukern/src/domain/common.h
+ /home/mrjoeybux/coding/strukern/src/kernels/basekernel.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Cholesky
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Core
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Dense
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Eigenvalues
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Geometry
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Householder
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/Jacobi
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/LU
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/QR
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/SVD
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/SparseCore
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Cholesky/LDLT.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Cholesky/LLT.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Cholesky/LLT_LAPACKE.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Core/Array.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Core/ArrayBase.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Core/ArrayWrapper.h
@@ -138,6 +153,61 @@ CMakeFiles/strukern.dir/binding/strukern.cpp.o
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Core/util/ReenableStupidWarnings.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Core/util/StaticAssert.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Core/util/XprHelper.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/./ComplexSchur.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/./HessenbergDecomposition.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/./RealQZ.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/./RealSchur.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/./Tridiagonalization.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/ComplexEigenSolver.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/ComplexSchur.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/ComplexSchur_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/EigenSolver.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/HessenbergDecomposition.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/RealQZ.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/RealSchur.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/RealSchur_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Eigenvalues/Tridiagonalization.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/AlignedBox.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/AngleAxis.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/EulerAngles.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Homogeneous.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Hyperplane.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/OrthoMethods.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/ParametrizedLine.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Quaternion.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Rotation2D.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/RotationBase.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Scaling.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Transform.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Translation.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/Umeyama.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Geometry/arch/Geometry_SSE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Householder/BlockHouseholder.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Householder/Householder.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Householder/HouseholderSequence.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/Jacobi/Jacobi.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/LU/Determinant.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/LU/FullPivLU.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/LU/InverseImpl.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/LU/PartialPivLU.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/LU/PartialPivLU_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/LU/arch/Inverse_SSE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/QR/ColPivHouseholderQR.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/QR/FullPivHouseholderQR.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/QR/HouseholderQR.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/QR/HouseholderQR_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SVD/BDCSVD.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SVD/JacobiSVD.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SVD/JacobiSVD_LAPACKE.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SVD/SVDBase.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SVD/UpperBidiagonalization.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SparseCore/AmbiVector.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SparseCore/CompressedStorage.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h
@@ -167,7 +237,12 @@ CMakeFiles/strukern.dir/binding/strukern.cpp.o
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SparseCore/SparseVector.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SparseCore/SparseView.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/SparseCore/TriangularSolver.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/misc/Image.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/misc/Kernel.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/misc/RealSvd2x2.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/misc/blas.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/misc/lapacke.h
+ /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/misc/lapacke_mangling.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/plugins/ArrayCwiseBinaryOps.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/plugins/ArrayCwiseUnaryOps.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/plugins/BlockMethods.h
@@ -175,6 +250,14 @@ CMakeFiles/strukern.dir/binding/strukern.cpp.o
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/deftypes.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/enum-matchings.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/enum-matchings.tpp
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/greedy-cost-sort.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/greedy-lsap.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/hungarian-lsap.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/dev/utils.h
+ /home/mrjoeybux/programs/gedlib/ext/lsape.5/include/lsap.h
  /home/mrjoeybux/programs/miniconda3/envs/mypy/include/python3.7m/Python.h
  /home/mrjoeybux/programs/miniconda3/envs/mypy/include/python3.7m/abstract.h
  /home/mrjoeybux/programs/miniconda3/envs/mypy/include/python3.7m/bltinmodule.h
@@ -252,7 +335,6 @@ CMakeFiles/strukern.dir/binding/strukern.cpp.o
  /usr/local/include/pybind11/attr.h
  /usr/local/include/pybind11/buffer_info.h
  /usr/local/include/pybind11/cast.h
- /usr/local/include/pybind11/complex.h
  /usr/local/include/pybind11/detail/class.h
  /usr/local/include/pybind11/detail/common.h
  /usr/local/include/pybind11/detail/descr.h

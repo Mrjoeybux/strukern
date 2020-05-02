@@ -3,15 +3,65 @@
 #include <iostream>
 //#include <Dense>
 
-double vImageCompressionKernel::dot(const JPEGImageMat &x1, const JPEGImageMat &x2, const unordered_map<string, int> &params) const {
-  JPEGImageMat x1x2(x1.rows(), 2 * x1.cols()), x2x1(x1.rows(), 2 * x1.cols());
-  x1x2 << x1, x2;
-  x2x1 << x2, x1;
-  return this->compress(x1, params.at("compressionlevel")) + this->compress(x2, params.at("compressionlevel")) -
-         this->compress(x1x2, params.at("compressionlevel")) - this->compress(x2x1, params.at("compressionlevel"));
+ImageCompressionKernel::ImageCompressionKernel(const CompressionMethod &method) {
+  switch (method) {
+  case CompressionMethod::Vertical:
+    this->comp_method = [this](const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) {
+      return dotVertical(x1, x2, params);
+    };
+    break;
+
+  case CompressionMethod::Horizontal:
+    this->comp_method = [this](const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) {
+      return dotHorizontal(x1, x2, params);
+    };
+    break;
+
+  case CompressionMethod::Both:
+    this->comp_method = [this](const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) {
+      return dotBoth(x1, x2, params);
+    };
+    break;
+
+  default:
+    cout << "Unknown compression method!" << endl;
+    break;
+  }
+}
+
+double ImageCompressionKernel::dotVertical(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const {
+  JPEGImageMat x1abovex2(2 * x1.rows(), x1.cols()), x2abovex1(2 * x1.rows(), x1.cols());
+  x1abovex2 << x1, x2;
+  x2abovex1 << x2, x1;
+  return this->compress(x1, params.JPEGCompressionQuality) + this->compress(x2, params.JPEGCompressionQuality) -
+         this->compress(x1abovex2, params.JPEGCompressionQuality) - this->compress(x2abovex1, params.JPEGCompressionQuality);
 };
 
-double vJPEGCompressionKernel::compress(const JPEGImageMat &x, const int compressionlevel) const {
+double ImageCompressionKernel::dotHorizontal(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const {
+  JPEGImageMat x1nexttox2(x1.rows(), 2 * x1.cols()), x2nexttox1(x1.rows(), 2 * x1.cols());
+  x1nexttox2 << x1, x2;
+  x2nexttox1 << x2, x1;
+  return this->compress(x1, params.JPEGCompressionQuality) + this->compress(x2, params.JPEGCompressionQuality) -
+         this->compress(x1nexttox2, params.JPEGCompressionQuality) - this->compress(x2nexttox1, params.JPEGCompressionQuality);
+};
+
+double ImageCompressionKernel::dotBoth(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const {
+  JPEGImageMat x1abovex2(2 * x1.rows(), x1.cols()), x2abovex1(2 * x1.rows(), x1.cols()), x1nexttox2(x1.rows(), 2 * x1.cols()),
+      x2nexttox1(x1.rows(), 2 * x1.cols());
+  x1abovex2 << x1, x2;
+  x2abovex1 << x2, x1;
+  x1nexttox2 << x1, x2;
+  x2nexttox1 << x2, x1;
+  return 2 * (this->compress(x1, params.JPEGCompressionQuality) + this->compress(x2, params.JPEGCompressionQuality)) -
+         this->compress(x1nexttox2, params.JPEGCompressionQuality) - this->compress(x2nexttox1, params.JPEGCompressionQuality) -
+         this->compress(x1abovex2, params.JPEGCompressionQuality) - this->compress(x2abovex1, params.JPEGCompressionQuality);
+}
+
+double ImageCompressionKernel::dot(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const {
+  return this->comp_method(x1, x2, params);
+}
+
+double JPEGCompressionKernel::compress(const JPEGImageMat &x, const int compressionlevel) const {
   unsigned char *raw_image = (unsigned char *)x.data();
   struct jpeg_compress_struct cinfo;
   struct jpeg_error_mgr jerr;
@@ -28,7 +78,7 @@ double vJPEGCompressionKernel::compress(const JPEGImageMat &x, const int compres
   cinfo.in_color_space = JCS_GRAYSCALE;
 
   jpeg_set_defaults(&cinfo);
-
+  jpeg_set_quality(&cinfo, compressionlevel, TRUE);
   jpeg_start_compress(&cinfo, TRUE);
 
   while (cinfo.next_scanline < cinfo.image_height) {

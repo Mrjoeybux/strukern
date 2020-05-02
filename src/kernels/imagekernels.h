@@ -2,30 +2,34 @@
 #define IMAGEKERNELS
 #include "basekernel.h"
 #include <Dense>
+#include <functional>
 using namespace Eigen;
+using namespace std;
 
-typedef Matrix<unsigned char, Dynamic, Dynamic, RowMajor> JPEGImageMat;
+typedef Eigen::Matrix<unsigned char, Dynamic, Dynamic, RowMajor> JPEGImageMat;
 
-class hImageCompressionKernel : public AbstractCompressionKernel<JPEGImageMat, int> {
+enum class CompressionMethod { Vertical, Horizontal, Both };
+
+class ImageCompressionKernel : public AbstractCompressionKernel<JPEGImageMat> {
+private:
+  function<double(const JPEGImageMat &, const JPEGImageMat &, const KernelParams &)> comp_method;
 
 public:
-  double dot(const JPEGImageMat &x1, const JPEGImageMat &x2, const unordered_map<string, int> &params) const override;
+  ImageCompressionKernel(const CompressionMethod &method);
+
+  double dotHorizontal(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const;
+
+  double dotVertical(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const;
+
+  double dotBoth(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const;
+
+  double dot(const JPEGImageMat &x1, const JPEGImageMat &x2, const KernelParams &params) const;
 };
 
-class vImageCompressionKernel : public AbstractCompressionKernel<JPEGImageMat, int> {
-
+class JPEGCompressionKernel : public ImageCompressionKernel {
 public:
-  double dot(const JPEGImageMat &x1, const JPEGImageMat &x2, const unordered_map<string, int> &params) const;
-};
+  JPEGCompressionKernel(const CompressionMethod &method) : ImageCompressionKernel(method){};
 
-class hvImageCompressionKernel : public AbstractCompressionKernel<JPEGImageMat, int> {
-
-public:
-  double dot(const JPEGImageMat &x1, const JPEGImageMat &x2, const unordered_map<string, int> &params) const override;
-};
-
-class vJPEGCompressionKernel : public vImageCompressionKernel {
-public:
   double compress(const JPEGImageMat &x, const int compressionlevel) const;
 };
 

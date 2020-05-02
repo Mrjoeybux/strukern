@@ -223,6 +223,9 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
+//Dependencies for target
+domain_LIB_DEPENDS:STATIC=
+
 //The directory containing a CMake configuration file for jpeg.
 jpeg_DIR:PATH=jpeg_DIR-NOTFOUND
 
@@ -231,6 +234,9 @@ kernelMatrix_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
 kernelmat_LIB_DEPENDS:STATIC=
+
+//Dependencies for the target
+kernels_LIB_DEPENDS:STATIC=general;domain;general;/home/mrjoeybux/programs/gedlib//lib/libgxlgedlib.so;
 
 //Value Computed by CMake
 myproject_BINARY_DIR:STATIC=/home/mrjoeybux/coding/strukern/src/build
@@ -245,7 +251,7 @@ pybind11_DIR:PATH=/usr/local/share/cmake/pybind11
 strukern_BINARY_DIR:STATIC=/home/mrjoeybux/coding/strukern/src/build
 
 //Dependencies for the target
-strukern_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/home/mrjoeybux/programs/gedlib//ext/nomad.3.8.1/lib/libnomad.so;general;/home/mrjoeybux/programs/gedlib//ext/libsvm.3.22/libsvm.so;general;/home/mrjoeybux/programs/gedlib//ext/fann.2.2.0/lib/libdoublefann.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;
+strukern_LIB_DEPENDS:STATIC=general;/home/mrjoeybux/programs/gedlib//lib/libgxlgedlib.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/home/mrjoeybux/programs/gedlib//ext/nomad.3.8.1/lib/libnomad.so;general;/home/mrjoeybux/programs/gedlib//ext/libsvm.3.22/libsvm.so;general;/home/mrjoeybux/programs/gedlib//ext/fann.2.2.0/lib/libdoublefann.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;
 
 //Value Computed by CMake
 strukern_SOURCE_DIR:STATIC=/home/mrjoeybux/coding/strukern/src

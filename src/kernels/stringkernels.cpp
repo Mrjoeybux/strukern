@@ -5,9 +5,9 @@
 #include <stdexcept>
 #include <zlib.h>
 
-double StringCompressionKernel::dot(const string &x1, const string &x2, const unordered_map<string, int> &params) const {
-  return this->compress(x1, params.at("compressionlevel")) + this->compress(x2, params.at("compressionlevel")) -
-         this->compress(x1 + x2, params.at("compressionlevel")) - this->compress(x2 + x1, params.at("compressionlevel"));
+double StringCompressionKernel::dot(const string &x1, const string &x2, const KernelParams &params) const {
+  return this->compress(x1, params.ZlibCompressionLevel) + this->compress(x2, params.ZlibCompressionLevel) -
+         this->compress(x1 + x2, params.ZlibCompressionLevel) - this->compress(x2 + x1, params.ZlibCompressionLevel);
 }
 
 double ZlibCompressionKernel::compress(const string &x, int compressionlevel) const {

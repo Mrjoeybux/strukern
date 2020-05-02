@@ -4,10 +4,10 @@
 #include <string>
 using namespace std;
 
-class StringCompressionKernel : public AbstractCompressionKernel<string, int> {
+class StringCompressionKernel : public AbstractCompressionKernel<string> {
 
 public:
-  double dot(const string &x1, const string &x2, const unordered_map<string, int> &params) const override;
+  double dot(const string &x1, const string &x2, const KernelParams &params) const override;
 };
 
 class ZlibCompressionKernel : public StringCompressionKernel {

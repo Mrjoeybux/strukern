@@ -1,0 +1,5 @@
+set(kernels_source_files basekernel.h gedkernel.h gedkernel.cpp)
+add_library(kernels ${kernels_source_files})
+set(GEDLIB /home/mrjoeybux/programs/gedlib/)
+set(GEDLIB_GXL_LINK ${GEDLIB}/lib/libgxlgedlib.so)
+target_link_libraries(kernels domain ${GEDLIB_GXL_LINK})

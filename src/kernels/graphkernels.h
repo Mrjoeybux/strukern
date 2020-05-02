@@ -1,36 +1,41 @@
 #ifndef GRAPHKERNELS
 #define GRAPHKERNELS
-#include "../domain/edit_costs.hpp"
+#include "../domain/edit_costs.h"
 #include "basekernel.h"
 #include "src/edit_costs/edit_costs.hpp"
 #include "src/env/ged_env.hpp"
+#include <functional>
 #include <vector>
 using namespace std;
 using namespace ged;
 
-template <typename bandwidthType, typename gedNodeLabels, typename gedEdgeLabels> class gedKernel : public Kernel<string, bandwidthType> {
+enum class GEDEditCosts { MABTS };
+
+enum class GEDMethods { BIPARTITE };
+
+class GEDKernel : public Kernel<string> {
+private:
+  // function<EditCosts<string, string> *(GEDEnv<int, string, string> &, const KernelParams &)> edit_cost_init;
+
+  // function<void(GEDEnv<int, string, string> &, const KernelParams &)> method_init;
 
 public:
-  MatrixXd computeKernelMatrix(const vector<string> &data, const unordered_map<string, bandwidthType> &params) const;
+  GEDKernel(const GEDEditCosts &edit_costs = GEDEditCosts::MABTS, const GEDMethods &method = GEDMethods::BIPARTITE);
 
-  /* use computeKernelMatrix when applicable */
-  double dot(const string &x1, const string &x2, const unordered_map<string, bandwidthType> &params) const;
-  /*Adds edit costs and initiliases environment*/
-  virtual EditCosts<gedNodeLabels, gedEdgeLabels> *init_edit_costs(GEDEnv<int, gedNodeLabels, gedEdgeLabels> &env,
-                                                                   const unordered_map<string, bandwidthType> &params) const = 0;
-  /*Adds methods and initialises method. */
-  virtual void init_methods(GEDEnv<int, gedNodeLabels, gedEdgeLabels> &env, const unordered_map<string, bandwidthType> &params) const = 0;
+  // MatrixXd computeKernelMatrix(const vector<string> &data, const KernelParams &params) const;
+
+  // use computeKernelMatrix when applicable
+  double dot(const string &x1, const string &x2, const KernelParams &params) const;
+  // Adds edit costs and initiliases environment
+  // EditCosts<string, string> *init_edit_costs(GEDEnv<int, string, string> &env, const KernelParams &params) const;
+  // Adds methods and initialises method.
+  // void init_methods(GEDEnv<int, string, string> &env, const KernelParams &params) const;
+
+  // EditCosts<string, string> *init_EditCosts_MABTS(GEDEnv<int, string, string> &env, const KernelParams &params) const;
+
+  // EditCosts<string, string> *init_EditCosts_CONSTANT(GEDEnv<int, string, string> &env, const KernelParams &params) const;
+
+  // void init_Method_BIPARTITE(GEDEnv<int, string, string> &env, const KernelParams &params) const;
 };
 
-class gedMABTS : public gedKernel<LabelPairMap, string, string> {
-public:
-  EditCosts<string, string> *init_edit_costs(GEDEnv<int, string, string> &env, const unordered_map<string, LabelPairMap> &params) const;
-
-  virtual void init_methods(GEDEnv<int, string, string> &env, const unordered_map<string, LabelPairMap> &params) const = 0;
-};
-
-class gedMABTS_LSAPE : public gedMABTS {
-
-  void init_methods(GEDEnv<int, string, string> &env, const unordered_map<string, LabelPairMap> &params) const;
-};
 #endif /* GRAPHKERNELS */
