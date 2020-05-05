@@ -9,7 +9,11 @@
 namespace py = pybind11;
 
 void declare_imagekernels(py::module &m) {
-  py::class_<ImageCompressionKernel, AbstractCompressionKernel<JPEGImageMat>>(m, "ImageCompressionKernel");
+  /*m.def("compressColour", &compressColour);
+  m.def("concatVertical", &concatVertical);
+    m.def("concatHorizontal", &concatHorizontal);*/
+
+  py::class_<ImageCompressionKernel, AbstractCompressionKernel<ImageMat>>(m, "ImageCompressionKernel");
 
   py::class_<JPEGCompressionKernel, ImageCompressionKernel>(m, "JPEGCompressionKernel").def(py::init<const CompressionMethod &>());
 }

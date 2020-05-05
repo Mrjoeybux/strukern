@@ -40,7 +40,8 @@ void declare_structs(py::module &m) {
             .def(py::init<>())
             .def_readwrite("ZlibCompressionLevel", &KernelParams::ZlibCompressionLevel)
             .def_readwrite("MABTS", &KernelParams::MABTS)
-            .def_readwrite("JPEGCompressionQuality", &KernelParams::JPEGCompressionQuality);
+            .def_readwrite("JPEGCompressionQuality", &KernelParams::JPEGCompressionQuality)
+            .def_readwrite("LocalityImproved", &KernelParams::LocalityImproved);
 
     py::enum_<MultiInstanceMethod>(m, "MultiInstanceMethod", py::arithmetic(),
                                    "Method to compute a multi-instance kernel.")
@@ -80,9 +81,9 @@ PYBIND11_MODULE(strukern, m) {
     auto bk = m.def_submodule("abstractbasekernels");
     string str = "String", img = "Image";
     declare_abstractbasekernel<string>(bk, str);
-    declare_abstractbasekernel<JPEGImageMat>(bk, img);
+    declare_abstractbasekernel<ImageMat>(bk, img);
     declare_abstractcompressionkernel<string>(bk, str);
-    declare_abstractcompressionkernel<JPEGImageMat>(bk, img);
+    declare_abstractcompressionkernel<ImageMat>(bk, img);
 
     auto sk = m.def_submodule("stringkernels");
     declare_stringkernels(sk);

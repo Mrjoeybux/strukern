@@ -22,6 +22,7 @@ struct KernelParams {
   int ZlibCompressionLevel;
   int JPEGCompressionQuality;
   unordered_map<string, LabelPairMap> MABTS;
+  unordered_map<string, int> LocalityImproved;
 };
 
 #define NUMERICAL_PRECISION 1e-12

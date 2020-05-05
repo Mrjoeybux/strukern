@@ -47,3 +47,26 @@ double ZlibCompressionKernel::compress(const string &x, int compressionlevel) co
 
   return outstring.size();
 }
+
+double LocalityImprovedKernel::dot(const string &x1, const string &x2, const KernelParams &params) const {
+    int L = params.LocalityImproved.at("sub_window_length");
+    int d1 = params.LocalityImproved.at("d1");
+    int d2 = params.LocalityImproved.at("d2");
+    double sum = 0;
+    for(uint i = L; i < x1.size() - L; i++){
+        sum += this->sub_window(x1.substr(i - L, 2*L + 1), x2.substr(i - L, 2*L + 1), d1);
+    }
+    return pow(sum, d2);
+}
+
+double LocalityImprovedKernel::sub_window(const string &x1_substr, const string &x2_substr, const int &d1) const {
+    double sum = 0;
+    cout << x1_substr << endl;
+    cout << x2_substr << endl;
+    for(uint i = 0; i < x1_substr.size(); i++){
+        if(x1_substr[i] == x2_substr[i]){
+            sum += 1;
+        }
+    }
+    return pow(sum, d1);
+}

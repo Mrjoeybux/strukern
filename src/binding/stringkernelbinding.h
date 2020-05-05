@@ -12,6 +12,8 @@ void declare_stringkernels(py::module &m) {
   py::class_<StringCompressionKernel, AbstractCompressionKernel<string>>(m, "StringCompressionKernel");
 
   py::class_<ZlibCompressionKernel, StringCompressionKernel>(m, "ZlibCompressionKernel").def(py::init<>());
+
+  py::class_<LocalityImprovedKernel, Kernel<string>>(m, "LocalityImprovedKernel").def(py::init<>());
 }
 
 #endif /* STRINGKERNELBINDING */

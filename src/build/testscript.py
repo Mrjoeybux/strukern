@@ -29,6 +29,7 @@ def test_graph():
     print(g)
         #print(g.getNodeAttribute(i))
 
+
 def test_mnist_image():
     path = "/home/mrjoeybux/coding/strukern/src/mnist_image_converted.dat"
     vals = []
@@ -67,6 +68,16 @@ def test_large_image():
     print("Mean Execution time: {0:.3g} +/- {1:.3g}".format(np.mean(times), np.std(times)))
     print("Total Execution time: {0:.3g}".format(np.sum(times)))
 
+
+def test_colour_image():
+    path = "/home/mrjoeybux/coding/strukern/src/build/random_black_and_white.png"
+    X = imageio.imread(path)
+    method = strukern.datastructures.ImageCompressionMethod.Both
+    params = strukern.datastructures.KernelParams()
+    params.JPEGCompressionQuality = 1
+    kernel = strukern.imagekernels.JPEGCompressionKernel(method)
+    print(kernel.dot(X, X, params))
+
 def test_multi_instance_ged():
     if __name__ == '__main__':
         gk = strukern.graphkernels
@@ -76,6 +87,15 @@ def test_multi_instance_ged():
         multi_meth = strukern.MultiInstanceMethod.Sum
         ged_multi = strukern.GEDMultiInstance(ged, multi_meth)
 
+def test_li():
+    x = "hello friend"
+    y = "howdy friend"
+    li = strukern.stringkernels.LocalityImprovedKernel()
+    params = strukern.datastructures.KernelParams()
+    params.LocalityImproved = {"sub_window_length": 3,
+                               "d1": 1,
+                               "d2": 1}
+    print(li.dot(x, y, params))
 
 if __name__ == "__main__":
     inp = int(sys.argv[1])
@@ -89,3 +109,7 @@ if __name__ == "__main__":
         test_large_image()
     elif inp == 4:
         test_multi_instance_ged()
+    elif inp == 5:
+        test_colour_image()
+    elif inp == 6:
+        test_li()
