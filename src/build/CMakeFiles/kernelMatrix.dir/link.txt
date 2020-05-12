@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared  -o kernelMatrix.cpython-37m-x86_64-linux-gnu.so CMakeFiles/kernelMatrix.dir/kernels/kernelmat.cpp.o -flto 

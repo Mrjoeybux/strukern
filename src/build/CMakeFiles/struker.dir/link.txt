@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared  -o struker.cpython-37m-x86_64-linux-gnu.so CMakeFiles/struker.dir/binding/struker.cpp.o -flto 

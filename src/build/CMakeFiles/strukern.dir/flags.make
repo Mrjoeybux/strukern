@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC -fvisibility=hidden   -flto -fno-fat-lto-objects -std=gnu++1z
 
 CXX_DEFINES = -Dstrukern_EXPORTS
 
-CXX_INCLUDES = -I/home/mrjoeybux/programs/gedlib -I/home/mrjoeybux/programs/gedlib/ext/boost.1.69.0 -I/home/mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen -I/home/mrjoeybux/programs/gedlib/ext/nomad.3.8.1/src -I/home/mrjoeybux/programs/gedlib/ext/nomad.3.8.1/ext/sgtelib/src -I/home/mrjoeybux/programs/gedlib/ext/lsape.5/include -I/home/mrjoeybux/programs/gedlib/ext/libsvm.3.22 -I/home/mrjoeybux/programs/gedlib/ext/fann.2.2.0/include -I/home/mrjoeybux/programs/miniconda3/envs/mypy/include/python3.7m -I/usr/local/include 
+CXX_INCLUDES = -I/home/Mrjoeybux/programs/gedlib -I/home/Mrjoeybux/programs/gedlib/ext/boost.1.69.0 -I/home/Mrjoeybux/programs/gedlib/ext/eigen.3.3.4/Eigen -I/home/Mrjoeybux/programs/gedlib/ext/nomad.3.8.1/src -I/home/Mrjoeybux/programs/gedlib/ext/nomad.3.8.1/ext/sgtelib/src -I/home/Mrjoeybux/programs/gedlib/ext/lsape.5/include -I/home/Mrjoeybux/programs/gedlib/ext/libsvm.3.22 -I/home/Mrjoeybux/programs/gedlib/ext/fann.2.2.0/include -I/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/include/python3.7m -I/usr/include/eigen3 -I/usr/local/include 
 

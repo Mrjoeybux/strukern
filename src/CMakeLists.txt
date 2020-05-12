@@ -3,16 +3,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 17)
 project(strukern)
 add_library(my_python3.7m SHARED IMPORTED)
-set_target_properties(my_python3.7m PROPERTIES
-        IMPORTED_LOCATION "/home/mrjoeybux/programs/miniconda3/envs/mypy/lib/libpython3.7m.so"
-        INTERFACE_INCLUDE_DIRECTORIES "/home/mrjoeybux/programs/miniconda3/envs/mypy/include/python3.7m"
-        )
+#set_target_properties(my_python3.7m PROPERTIES
+#        IMPORTED_LOCATION "/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/lib/libpython3.7m.so"
+#        INTERFACE_INCLUDE_DIRECTORIES "/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/include/python3.7m"
+#:wq        )
 find_package(PythonLibs REQUIRED)
 find_package(pybind11 REQUIRED)
 find_package(ZLIB)
 find_package(JPEG REQUIRED)
 find_package (Eigen3 REQUIRED NO_MODULE)
-set(GEDLIB /home/mrjoeybux/programs/gedlib/)
+set(GEDLIB /home/Mrjoeybux/programs/gedlib/)
 set(GEDLIB_BOOST ${GEDLIB}/ext/boost.1.69.0/)
 set(GEDLIB_EIGEN ${GEDLIB}/ext/eigen.3.3.4/Eigen/)
 set(GEDLIB_NOMAD ${GEDLIB}/ext/nomad.3.8.1/src/)
@@ -30,8 +30,8 @@ include_directories(${GEDLIB}
                 ${GEDLIB_LIBSVM} 
                 ${GEDLIB_FANN}
                 ${PYTHON_INCLUDE_DIRS}
-                ${JPEG_INCLUDE_DIR})
-                #${EIGEN3_INCLUDE_DIR})
+                ${JPEG_INCLUDE_DIR}
+                ${EIGEN3_INCLUDE_DIR})
                 #${MY_EIGEN})
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 message(STATUS "INCLUDED DIRECTORIES:")
