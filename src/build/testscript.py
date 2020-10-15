@@ -2,7 +2,8 @@ import strukern
 import numpy as np
 import sys
 import time
-import imageio
+#import imageio
+import matplotlib.pyplot as plt
 def test_eigen():
     string = strukern.stringkernels.TestCompressionKernel()
     #string = strukern.DiracStringKernel()
@@ -53,7 +54,7 @@ def test_mnist_image():
     print("Mean Execution time: {0:.3g} +/- {1:.3g}".format(np.mean(times), np.std(times)))
     print("Total Execution time: {0:.3g}".format(np.sum(times)))"""
 
-def test_large_image():
+"""def test_large_image():
     path = "/home/mrjoeybux/coding/strukern/src/build/random_black_and_white.png"
     X = imageio.imread(path)
     X = X[:, :, 0]
@@ -70,13 +71,15 @@ def test_large_image():
 
 
 def test_colour_image():
-    path = "/home/mrjoeybux/coding/strukern/src/build/random_black_and_white.png"
+    path = "/home/Mrjoeybux/coding/strukern/src/build/out.jpeg"
     X = imageio.imread(path)
-    method = strukern.datastructures.ImageCompressionMethod.Both
+    print(X.shape)
+    method = strukern.datastructures.ImageCompressionMethod.Horizontal
     params = strukern.datastructures.KernelParams()
     params.JPEGCompressionQuality = 1
-    kernel = strukern.imagekernels.JPEGCompressionKernel(method)
-    print(kernel.dot(X, X, params))
+    image_type = strukern.datastructures.ImageType.RGB
+    kernel = strukern.imagekernels.JPEGCompressionKernel(method, image_type)
+    print(kernel.dot(X, X, params))"""
 
 def test_multi_instance_ged():
     if __name__ == '__main__':
@@ -97,6 +100,51 @@ def test_li():
                                "d2": 1}
     print(li.dot(x, y, params))
 
+def test_ppm():
+    x = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    y = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    z = "ipsum Loren dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    import random
+    base_size = 100
+    times = []
+    sizes = []
+    size = 100
+    passages = [x, z]
+    X = [random.choice(passages) for i in range(size)]
+    params = strukern.datastructures.KernelParams()
+    params.StringCompressionLevel = 5
+
+    distance_measure = strukern.datastructures.CompressionDistanceMeasure.NCD
+    #distance_measure = strukern.datastructures.StringCompressionDistanceMeasure.DIFF
+
+    ppm = strukern.stringkernels.PPMCompressionKernel(distance_measure)
+    start = time.time()
+    K = ppm.computeKernelMatrix(passages, params)
+    end = time.time() - start
+    print("done in {0:.3f} seconds!".format(end))
+    print(K)
+    vals, vecs = np.linalg.eigh(K)
+    #print(vals)
+
+
+def test_tthresh():
+    shape = (10, 10, 10)
+    x1 = np.random.rand(*shape)
+    x2 = np.ones(shape)
+    x3 = np.random.rand(*shape)
+    measure = strukern.datastructures.CompressionDistanceMeasure.NCD
+    cub = strukern.tensorkernels.TThreshTensorCompressionKernel(measure)
+    params = strukern.datastructures.KernelParams()
+
+    params.TensorCompressionLevel = 1
+    params.TensorConcatDim = 2
+    val = cub.computeRectangularKernelMatrix([x1, x2], [x3], params)
+    #val = cub.computeKernelMatrix([x1, x2], params)
+    #val = cub.dot(x1, x3, params)
+    print(val)
+
 if __name__ == "__main__":
     inp = int(sys.argv[1])
     if inp == 0:
@@ -105,11 +153,15 @@ if __name__ == "__main__":
         test_graph()
     elif inp == 2:
         test_mnist_image()
-    elif inp == 3:
-        test_large_image()
+    #elif inp == 3:
+     #   test_large_image()
     elif inp == 4:
         test_multi_instance_ged()
-    elif inp == 5:
-        test_colour_image()
+    #elif inp == 5:
+     #   test_colour_image()
     elif inp == 6:
         test_li()
+    elif inp == 7:
+        test_ppm()
+    elif inp == 8:
+        test_tthresh()

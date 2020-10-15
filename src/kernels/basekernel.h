@@ -23,13 +23,15 @@ using namespace std;
 using namespace Eigen;
 
 struct KernelParams {
-    int ZlibCompressionLevel;
+    int StringCompressionLevel;
     int JPEGCompressionQuality;
+    int TensorCompressionLevel;
     unordered_map<string, LabelPairMap> MABTS;
     unordered_map<string, int> LocalityImproved;
     unordered_map<string, double> MolecularEditCosts;
     double RBFSigma;
     int PolynomialPower;
+    int TensorConcatDim;
 };
 
 #define NUMERICAL_PRECISION 1e-12
@@ -39,8 +41,14 @@ enum class KernelType {
     Hilbert, Krein
 };
 
+
 enum class MultiInstanceMethod {
     SUM, OA, MAX, MIN
+};
+
+
+enum class CompressionDistanceMeasure {
+    NCD, DIFF
 };
 
 template<typename T>
@@ -79,12 +87,9 @@ inline MatrixXd Kernel<T>::computeKernelMatrix(const vector<T> &data, const Kern
   for (uint i = 0; i < n; i++) {
     for (uint j = i; j < n; j++) {
       K(i, j) = this->dot(data[i], data[j], params);
-      if (i != j) {
-        K(j, i) = K(i, j);
-      }
     }
   }
-  return K;
+  return K.selfadjointView<Upper>();
 }
 
 template<typename T>
@@ -171,33 +176,38 @@ MultiInstanceKernel<T>::MultiInstanceKernel(const Kernel<T> *basekernel, const M
 
 template<typename T>
 double MultiInstanceKernel<T>::dot(const vector<T> &x1, const vector<T> &x2, const KernelParams &params) const {
-  if(!isnan(this->basekernel->default_val)){
-    if(x1 == x2){
-      return this->basekernel->default_val;
-    }
-  }
   return this->dot_func(x1, x2, params);
 }
 
 template<typename T>
 double MultiInstanceKernel<T>::sum(const vector<T> &x1, const vector<T> &x2, const KernelParams &params) const {
-  double sum = 0.0;
-  for (uint i = 0; i < x1.size(); i++) {
-    for (uint j = 0; j < x2.size(); j++) {
-      sum += this->basekernel->dot(x1[i], x2[j], params);
+  if (!isnan(this->basekernel->default_val)) {
+    if (x1 == x2) {
+      return this->basekernel->default_val;
     }
   }
-  return sum;
+  MatrixXd K = this->basekernel->computeRectangularKernelMatrix(x1, x2, params);
+  return K.sum();
 }
 
 template<typename T>
 double MultiInstanceKernel<T>::max(const vector<T> &x1, const vector<T> &x2, const KernelParams &params) const {
+  if(!isnan(this->basekernel->default_val)){
+    if(x1 == x2){
+      return this->basekernel->default_val;
+    }
+  }
   MatrixXd K = this->basekernel->computeRectangularKernelMatrix(x1, x2, params);
   return K.maxCoeff();
 }
 
 template<typename T>
 double MultiInstanceKernel<T>::min(const vector<T> &x1, const vector<T> &x2, const KernelParams &params) const {
+  if(!isnan(this->basekernel->default_val)){
+    if(x1 == x2){
+      return this->basekernel->default_val;
+    }
+  }
   MatrixXd K = this->basekernel->computeRectangularKernelMatrix(x1, x2, params);
   return K.minCoeff();
 }
@@ -241,10 +251,108 @@ template<typename T>
 class AbstractCompressionKernel : public Kernel<T> {
 
 public:
-    //KernelType ktype = KernelType::Krein;
+     AbstractCompressionKernel(const CompressionDistanceMeasure &measure){
+       switch (measure) {
+         case CompressionDistanceMeasure::NCD:
+           this->distance_measure = [this](const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1){
+               return this->NCD(comp_x1, comp_x2, comp_x1_x2, comp_x2_x1);
+           };
+           break;
+         case CompressionDistanceMeasure::DIFF:
+           this->distance_measure = [this](const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1){
+               return this->difference(comp_x1, comp_x2, comp_x1_x2, comp_x2_x1);
+           };
+           break;
+         default:
+           cout << "Unknown distance measure!" << endl;
+       }
+     }
 
-    virtual double compress(const T &x, const int compressionlevel) const = 0;
+    function<double(const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1)> distance_measure;
+
+    double dot(const T &x1, const T &x2, const KernelParams &params) const;
+
+    MatrixXd computeKernelMatrix(const vector<T> &data, const KernelParams &params) const;
+
+    MatrixXd computeRectangularKernelMatrix(const vector<T> &data1, const vector<T> &data2,
+                                            const KernelParams &params) const;
+
+    double NCD(const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1) const;
+
+    double difference(const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1) const;
+
+    virtual double compress(const T &x, const KernelParams &params) const = 0;
+
+    virtual T concat(const T &x1, const T & x2, const KernelParams &params) const = 0;
 };
+
+template<typename T>
+double AbstractCompressionKernel<T>::dot(const T &x1, const T &x2, const KernelParams &params) const {
+  double comp_x1, comp_x2, comp_x1_x2, comp_x2_x1;
+  comp_x1 = this->compress(x1, params);
+  comp_x2 = this->compress(x2, params);
+  comp_x1_x2 = this->compress(this->concat(x1, x2, params), params);
+  comp_x2_x1 = this->compress(this->concat(x2, x1, params), params);
+  return this->distance_measure(comp_x1, comp_x2, comp_x1_x2, comp_x2_x1);
+}
+
+template<typename T>
+MatrixXd AbstractCompressionKernel<T>::computeKernelMatrix(const vector<T> &data, const KernelParams &params) const {
+  int n = data.size();
+  MatrixXd K = MatrixXd::Zero(n, n);
+  double comp_i_j, comp_j_i;
+  vector<double> comp_single;
+  for(uint i = 0; i < n; i++){
+    comp_single.push_back(this->compress(data[i], params));
+  }
+  for (uint i = 0; i < n; i++) {
+    for (uint j = i; j < n; j++) {
+      if(i == j){
+        comp_i_j = this->compress(this->concat(data[i], data[j], params), params);
+        K(i, i) = this->distance_measure(comp_single[i], comp_single[i], comp_i_j, comp_i_j);
+      }else {
+        comp_i_j = this->compress(this->concat(data[i], data[j], params), params);
+        comp_j_i = this->compress(this->concat(data[j], data[i], params), params);
+        K(i, j) = this->distance_measure(comp_single[i], comp_single[j], comp_i_j, comp_j_i);
+      }
+    }
+  }
+  return K.selfadjointView<Upper>();
+}
+
+template<typename T>
+MatrixXd AbstractCompressionKernel<T>::computeRectangularKernelMatrix(const vector<T> &data1, const vector<T> &data2,
+                                                                      const KernelParams &params) const {
+  int n1 = data1.size();
+  int n2 = data2.size();
+  MatrixXd K = MatrixXd::Zero(n1, n2);
+  double comp_i_j, comp_j_i;
+  vector<double> comp_single_1, comp_single_2;
+  for(uint i = 0; i < n1; i++){
+    comp_single_1.push_back(this->compress(data1[i], params));
+  }
+  for(uint i = 0; i < n2; i++){
+    comp_single_2.push_back(this->compress(data2[i], params));
+  }
+  for (uint i = 0; i < n1; i++) {
+    for (uint j = 0; j < n2; j++) {
+        comp_i_j = this->compress(this->concat(data1[i], data2[j], params), params);
+        comp_j_i = this->compress(this->concat(data2[j], data1[i], params), params);
+        K(i, j) = this->distance_measure(comp_single_1[i], comp_single_2[j], comp_i_j, comp_j_i);
+      }
+    }
+  return K;
+}
+
+template<typename T>
+double AbstractCompressionKernel<T>::NCD(const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1) const{
+  return max(comp_x1_x2 - comp_x1, comp_x2_x1 - comp_x2) / max(comp_x1, comp_x2);
+}
+
+template<typename T>
+double AbstractCompressionKernel<T>::difference(const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1) const{
+  return comp_x1 + comp_x2 - comp_x1_x2 - comp_x2_x1;
+}
 
 
 #endif /* BASEKERNEL */

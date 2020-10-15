@@ -15,7 +15,7 @@ void declare_imagekernels(py::module &m) {
 
   py::class_<ImageCompressionKernel, AbstractCompressionKernel<ImageMat>>(m, "ImageCompressionKernel");
 
-  py::class_<JPEGCompressionKernel, ImageCompressionKernel>(m, "JPEGCompressionKernel").def(py::init<const CompressionMethod &>());
+  py::class_<JPEGCompressionKernel, ImageCompressionKernel>(m, "JPEGCompressionKernel").def(py::init<const CompressionMethod &, const ImageType &>());
 }
 
 #endif /* IMAGEKERNELBINDING */

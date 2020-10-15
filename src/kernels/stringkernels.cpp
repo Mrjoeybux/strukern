@@ -5,16 +5,15 @@
 #include <stdexcept>
 #include <zlib.h>
 
-double StringCompressionKernel::dot(const string &x1, const string &x2, const KernelParams &params) const {
-  return this->compress(x1, params.ZlibCompressionLevel) + this->compress(x2, params.ZlibCompressionLevel) -
-         this->compress(x1 + x2, params.ZlibCompressionLevel) - this->compress(x2 + x1, params.ZlibCompressionLevel);
+string StringCompressionKernel::concat(const string &x1, const string &x2, const KernelParams &params) const{
+  return x1 + x2;
 }
 
-double ZlibCompressionKernel::compress(const string &x, int compressionlevel) const {
+double ZlibCompressionKernel::compress(const string &x, const KernelParams &params) const {
   z_stream zs; // z_stream is zlib's control structure
   memset(&zs, 0, sizeof(zs));
 
-  if (deflateInit(&zs, compressionlevel) != Z_OK)
+  if (deflateInit(&zs, params.StringCompressionLevel) != Z_OK)
     throw(std::runtime_error("deflateInit failed while compressing."));
 
   zs.next_in = (Bytef *)x.data();
@@ -48,6 +47,34 @@ double ZlibCompressionKernel::compress(const string &x, int compressionlevel) co
   return outstring.size();
 }
 
+double PPMCompressionKernel::compress(const string &x, const KernelParams &params) const {
+  istringstream is(x);
+  ostringstream os;
+  switch (params.StringCompressionLevel) {
+    case 1: {
+      o1 compressor;
+      compressor.compress(is, os);
+    }break;
+    case 2:{
+      o2 compressor;
+      compressor.compress(is, os);
+    }break;
+    case 3:{
+      o3 compressor;
+      compressor.compress(is, os);
+    }break;
+    case 4:{
+      o4 compressor;
+      compressor.compress(is, os);
+    }break;
+    case 5:{
+      o5 compressor;
+      compressor.compress(is, os);
+    }break;
+  }
+  return os.tellp();
+}
+
 double LocalityImprovedKernel::dot(const string &x1, const string &x2, const KernelParams &params) const {
     int L = params.LocalityImproved.at("sub_window_length");
     int d1 = params.LocalityImproved.at("d1");
@@ -61,8 +88,6 @@ double LocalityImprovedKernel::dot(const string &x1, const string &x2, const Ker
 
 double LocalityImprovedKernel::sub_window(const string &x1_substr, const string &x2_substr, const int &d1) const {
     double sum = 0;
-    cout << x1_substr << endl;
-    cout << x2_substr << endl;
     for(uint i = 0; i < x1_substr.size(); i++){
         if(x1_substr[i] == x2_substr[i]){
             sum += 1;

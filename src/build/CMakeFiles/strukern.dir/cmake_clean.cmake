@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/strukern.dir/binding/strukern.cpp.o"
   "strukern.pdb"
-  "strukern.cpython-37m-x86_64-linux-gnu.so"
+  "strukern.so"
 )
 
 # Per-language clean rules from dependency scanning.

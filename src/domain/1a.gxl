@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gxl SYSTEM "http://www.gupro.de/GXL/gxl-1.0.dtd">
+<gxl xmlns:xlink="http://www.w3.org/1999/xlink">
+<graph id="1a" edgeids="false" edgemode="undirected">
+<node id="_0">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.495</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.703</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.271</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0163</TYPENAME></attr>
+</node>
+<node id="_1">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.346</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.605</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.154</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0557</TYPENAME></attr>
+</node>
+<node id="_2">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.666</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.747</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.513</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0598</TYPENAME></attr>
+</node>
+<node id="_3">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.129</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.965</TYPENAME></attr>
+<attr name="z"><TYPENAME>-3.008</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0615</TYPENAME></attr>
+</node>
+<node id="_4">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.279</TYPENAME></attr>
+<attr name="y"><TYPENAME>-3.05</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.15</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0612</TYPENAME></attr>
+</node>
+<node id="_5">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.965</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.921</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.796</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0538</TYPENAME></attr>
+</node>
+<node id="_6">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.142</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.585</TYPENAME></attr>
+<attr name="z"><TYPENAME>1.164</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0163</TYPENAME></attr>
+</node>
+<node id="_7">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.016</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.055</TYPENAME></attr>
+<attr name="z"><TYPENAME>2.162</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0538</TYPENAME></attr>
+</node>
+<node id="_8">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.703</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.924</TYPENAME></attr>
+<attr name="z"><TYPENAME>3.516</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0612</TYPENAME></attr>
+</node>
+<node id="_9">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>0.488</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.318</TYPENAME></attr>
+<attr name="z"><TYPENAME>3.903</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0615</TYPENAME></attr>
+</node>
+<node id="_10">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>1.372</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.843</TYPENAME></attr>
+<attr name="z"><TYPENAME>2.937</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0598</TYPENAME></attr>
+</node>
+<node id="_11">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>1.07</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.972</TYPENAME></attr>
+<attr name="z"><TYPENAME>1.571</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0557</TYPENAME></attr>
+</node>
+<node id="_12">
+<attr name="AtomicNum"><TYPENAME>7</TYPENAME></attr>
+<attr name="x"><TYPENAME>1.622</TYPENAME></attr>
+<attr name="y"><TYPENAME>0.809</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.213</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.3888</TYPENAME></attr>
+</node>
+<node id="_13">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.052</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.467</TYPENAME></attr>
+<attr name="z"><TYPENAME>0.535</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0601</TYPENAME></attr>
+</node>
+<node id="_14">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>0.131</TYPENAME></attr>
+<attr name="y"><TYPENAME>0.733</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.636</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0601</TYPENAME></attr>
+</node>
+<node id="_15">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>1.799</TYPENAME></attr>
+<attr name="y"><TYPENAME>2.034</TYPENAME></attr>
+<attr name="z"><TYPENAME>0.736</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0866</TYPENAME></attr>
+</node>
+<node id="_16">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.522</TYPENAME></attr>
+<attr name="y"><TYPENAME>1.163</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.467</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0506</TYPENAME></attr>
+</node>
+<node id="_17">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.079</TYPENAME></attr>
+<attr name="y"><TYPENAME>-3.792</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.154</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0624</TYPENAME></attr>
+</node>
+<node id="_18">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.963</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.52</TYPENAME></attr>
+<attr name="z"><TYPENAME>1.892</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0624</TYPENAME></attr>
+</node>
+<node id="_19">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>3.038</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.269</TYPENAME></attr>
+<attr name="z"><TYPENAME>0.977</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0112</TYPENAME></attr>
+</node>
+<node id="_20">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.2</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.268</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.197</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0112</TYPENAME></attr>
+</node>
+<node id="_21">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.478</TYPENAME></attr>
+<attr name="y"><TYPENAME>0.992</TYPENAME></attr>
+<attr name="z"><TYPENAME>0.242</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0112</TYPENAME></attr>
+</node>
+<node id="_22">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.052</TYPENAME></attr>
+<attr name="y"><TYPENAME>1.539</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.36</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0112</TYPENAME></attr>
+</node>
+<node id="_23">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>1.828</TYPENAME></attr>
+<attr name="y"><TYPENAME>1.459</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.265</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0122</TYPENAME></attr>
+</node>
+<node id="_24">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.354</TYPENAME></attr>
+<attr name="y"><TYPENAME>3.135</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.142</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0689</TYPENAME></attr>
+</node>
+<node id="_25">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>3.323</TYPENAME></attr>
+<attr name="y"><TYPENAME>2.386</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.025</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.0643</TYPENAME></attr>
+</node>
+<node id="_26">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>1.559</TYPENAME></attr>
+<attr name="y"><TYPENAME>3.598</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.737</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0247</TYPENAME></attr>
+</node>
+<node id="_27">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.845</TYPENAME></attr>
+<attr name="y"><TYPENAME>3.918</TYPENAME></attr>
+<attr name="z"><TYPENAME>0.444</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0247</TYPENAME></attr>
+</node>
+<node id="_28">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>4.214</TYPENAME></attr>
+<attr name="y"><TYPENAME>2.092</TYPENAME></attr>
+<attr name="z"><TYPENAME>-0.458</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0250</TYPENAME></attr>
+</node>
+<node id="_29">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>3.649</TYPENAME></attr>
+<attr name="y"><TYPENAME>2.988</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.878</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0250</TYPENAME></attr>
+</node>
+<node id="_30">
+<attr name="AtomicNum"><TYPENAME>8</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.632</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.986</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.585</TYPENAME></attr>
+<attr name="charge"><TYPENAME>-0.3845</TYPENAME></attr>
+</node>
+<node id="_31">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.528</TYPENAME></attr>
+<attr name="y"><TYPENAME>1.764</TYPENAME></attr>
+<attr name="z"><TYPENAME>1.509</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0064</TYPENAME></attr>
+</node>
+<node id="_32">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>3.434</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.045</TYPENAME></attr>
+<attr name="z"><TYPENAME>-3.096</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0364</TYPENAME></attr>
+</node>
+<node id="_33">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>4.007</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.513</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.29</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0523</TYPENAME></attr>
+</node>
+<node id="_34">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.771</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.795</TYPENAME></attr>
+<attr name="z"><TYPENAME>-3.536</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0523</TYPENAME></attr>
+</node>
+<node id="_35">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>4.109</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.674</TYPENAME></attr>
+<attr name="z"><TYPENAME>-3.873</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0523</TYPENAME></attr>
+</node>
+<node id="_36">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>0.846</TYPENAME></attr>
+<attr name="y"><TYPENAME>2.291</TYPENAME></attr>
+<attr name="z"><TYPENAME>1.21</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0064</TYPENAME></attr>
+</node>
+<node id="_37">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-0.556</TYPENAME></attr>
+<attr name="y"><TYPENAME>0.091</TYPENAME></attr>
+<attr name="z"><TYPENAME>-3.198</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0620</TYPENAME></attr>
+</node>
+<node id="_38">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>2.301</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.376</TYPENAME></attr>
+<attr name="z"><TYPENAME>3.256</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0620</TYPENAME></attr>
+</node>
+<node id="_39">
+<attr name="AtomicNum"><TYPENAME>6</TYPENAME></attr>
+<attr name="x"><TYPENAME>3.427</TYPENAME></attr>
+<attr name="y"><TYPENAME>0.041</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.992</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0358</TYPENAME></attr>
+</node>
+<node id="_40">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>4.085</TYPENAME></attr>
+<attr name="y"><TYPENAME>0.455</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.768</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0544</TYPENAME></attr>
+</node>
+<node id="_41">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>4.068</TYPENAME></attr>
+<attr name="y"><TYPENAME>-0.372</TYPENAME></attr>
+<attr name="z"><TYPENAME>-1.204</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0544</TYPENAME></attr>
+</node>
+<node id="_42">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.372</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.067</TYPENAME></attr>
+<attr name="z"><TYPENAME>-4.062</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0618</TYPENAME></attr>
+</node>
+<node id="_43">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.637</TYPENAME></attr>
+<attr name="y"><TYPENAME>-4.001</TYPENAME></attr>
+<attr name="z"><TYPENAME>-2.535</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0618</TYPENAME></attr>
+</node>
+<node id="_44">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>-1.395</TYPENAME></attr>
+<attr name="y"><TYPENAME>-2.293</TYPENAME></attr>
+<attr name="z"><TYPENAME>4.27</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0618</TYPENAME></attr>
+</node>
+<node id="_45">
+<attr name="AtomicNum"><TYPENAME>1</TYPENAME></attr>
+<attr name="x"><TYPENAME>0.729</TYPENAME></attr>
+<attr name="y"><TYPENAME>-1.215</TYPENAME></attr>
+<attr name="z"><TYPENAME>4.958</TYPENAME></attr>
+<attr name="charge"><TYPENAME>0.0618</TYPENAME></attr>
+</node>
+<edge from="_1" to="_0">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_5" to="_0">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_0" to="_6">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_2" to="_1">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_1" to="_14">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_37" to="_2">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_3" to="_2">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_42" to="_3">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_3" to="_4">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_43" to="_4">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_4" to="_5">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_5" to="_17">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_6" to="_11">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_6" to="_7">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_18" to="_7">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_7" to="_8">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_8" to="_9">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_8" to="_44">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_10" to="_9">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_9" to="_45">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_11" to="_10">
+<attr name="BondType"><TYPENAME>AROMATIC</TYPENAME></attr>
+</edge>
+<edge from="_10" to="_38">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_13" to="_11">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_16" to="_12">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_14" to="_12">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_12" to="_13">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_12" to="_15">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_20" to="_13">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_13" to="_19">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_22" to="_14">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_14" to="_21">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_24" to="_15">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_15" to="_36">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_15" to="_31">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_23" to="_16">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_39" to="_16">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_16" to="_25">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_25" to="_24">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_26" to="_24">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_24" to="_27">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_29" to="_25">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_25" to="_28">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_32" to="_30">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_30" to="_39">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_35" to="_32">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_34" to="_32">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_32" to="_33">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_40" to="_39">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+<edge from="_39" to="_41">
+<attr name="BondType"><TYPENAME>SINGLE</TYPENAME></attr>
+</edge>
+</graph></gxl>

@@ -18,9 +18,10 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/Mrjoeybux/programs/gedlib/ext/lsape.5/include"
   "/home/Mrjoeybux/programs/gedlib/ext/libsvm.3.22"
   "/home/Mrjoeybux/programs/gedlib/ext/fann.2.2.0/include"
-  "/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/include/python3.7m"
+  "/home/Mrjoeybux/programs/miniconda3/include/python3.6m"
   "/usr/include/eigen3"
-  "/usr/local/include"
+  "/home/Mrjoeybux/coding/libs/dlib-19.16"
+  "../pybind11/include"
   )
 
 # Targets to which this target links.

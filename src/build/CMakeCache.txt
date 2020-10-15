@@ -19,7 +19,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -96,8 +96,56 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Enable/Disable output of compile commands during generation.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -190,20 +238,36 @@ JPEG_INCLUDE_DIR:PATH=/usr/include
 //Path to a library.
 JPEG_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libjpeg.so
 
+//Use the classic LTO flag algorithm, even on CMake 3.9+
+PYBIND11_CLASSIC_LTO:BOOL=OFF
+
+//install path for pybind11Config.cmake
+PYBIND11_CMAKECONFIG_INSTALL_DIR:STRING=share/cmake/pybind11
+
+//Install pybind11 header files?
+PYBIND11_INSTALL:BOOL=1
+
 //Python version to use for compiling modules
 PYBIND11_PYTHON_VERSION:STRING=
 
-//Path to a program.
-PYTHON_EXECUTABLE:FILEPATH=/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/bin/python3.7
+//Build pybind11 test suite?
+PYBIND11_TEST:BOOL=OFF
 
-//Path to a file.
-PYTHON_INCLUDE_DIR:PATH=/usr/include/python3.6m
+//No help, variable specified on the command line.
+PYTHON_EXECUTABLE:UNINITIALIZED=/home/Mrjoeybux/miniconda/envs/krein/bin/python3.6
 
-//Path to a library.
-PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+//No help, variable specified on the command line.
+PYTHON_INCLUDE_DIR:UNINITIALIZED=/home/Mrjoeybux/miniconda/envs/krein/include/python3.6m
+
+//No help, variable specified on the command line.
+PYTHON_LIBRARY:UNINITIALIZED=/home/Mrjoeybux/miniconda/envs/krein/lib/libpython3.6m.so
 
 //Path to a library.
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
+//Install pybind11 headers in Python include directory instead
+// of default installation prefix
+USE_PYTHON_INCLUDE_DIR:BOOL=OFF
 
 //Path to a file.
 ZLIB_INCLUDE_DIR:PATH=/usr/include
@@ -214,14 +278,20 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
+//Value Computed by CMake
+pybind11_BINARY_DIR:STATIC=/home/Mrjoeybux/coding/strukern/src/build/pybind11
+
 //The directory containing a CMake configuration file for pybind11.
 pybind11_DIR:PATH=/usr/local/share/cmake/pybind11
+
+//Value Computed by CMake
+pybind11_SOURCE_DIR:STATIC=/home/Mrjoeybux/coding/strukern/src/pybind11
 
 //Value Computed by CMake
 strukern_BINARY_DIR:STATIC=/home/Mrjoeybux/coding/strukern/src/build
 
 //Dependencies for the target
-strukern_LIB_DEPENDS:STATIC=general;/home/Mrjoeybux/programs/gedlib//lib/libgxlgedlib.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/home/Mrjoeybux/programs/gedlib//ext/nomad.3.8.1/lib/libnomad.so;general;/home/Mrjoeybux/programs/gedlib//ext/libsvm.3.22/libsvm.so;general;/home/Mrjoeybux/programs/gedlib//ext/fann.2.2.0/lib/libdoublefann.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;
+strukern_LIB_DEPENDS:STATIC=general;/home/Mrjoeybux/programs/gedlib//lib/libgxlgedlib.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/home/Mrjoeybux/programs/gedlib//ext/nomad.3.8.1/lib/libnomad.so;general;/home/Mrjoeybux/programs/gedlib//ext/libsvm.3.22/libsvm.so;general;/home/Mrjoeybux/programs/gedlib//ext/fann.2.2.0/lib/libdoublefann.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/home/Mrjoeybux/coding/libs/dlib-19.16/build/dlib/libdlib.so;
 
 //Value Computed by CMake
 strukern_SOURCE_DIR:STATIC=/home/Mrjoeybux/coding/strukern/src
@@ -306,8 +376,40 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/Mrjoeybux/coding/strukern/src
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -325,7 +427,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -371,7 +473,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libjpeg.so
 //Details about finding PYTHON
 FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/bin/python3.7
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/home/Mrjoeybux/programs/miniconda3/envs/ICML_npd/bin/python3.7][v3.7.5()]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/home/Mrjoeybux/coding/strukern/src/build/which][v1.4()]
 //Details about finding PythonLibs
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython3.6m.so][/usr/include/python3.6m][v3.6.9()]
 //Details about finding ZLIB
@@ -382,20 +484,33 @@ HAS_FLTO:INTERNAL=1
 JPEG_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: JPEG_LIBRARY
 JPEG_LIBRARY-ADVANCED:INTERNAL=1
+PYBIND11_INCLUDE_DIR:INTERNAL=/home/Mrjoeybux/coding/strukern/src/pybind11/include
 PYBIND11_LTO_CXX_FLAGS:INTERNAL=-flto;-fno-fat-lto-objects
 PYBIND11_LTO_LINKER_FLAGS:INTERNAL=-flto
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_INCLUDE_DIR
 PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
+PYTHON_INCLUDE_DIRS:INTERNAL=
+PYTHON_IS_DEBUG:INTERNAL=
+PYTHON_LIBRARIES:INTERNAL=
 //ADVANCED property for variable: PYTHON_LIBRARY
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
 PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+PYTHON_MODULE_EXTENSION:INTERNAL=.so
+PYTHON_MODULE_PREFIX:INTERNAL=
+PYTHON_VERSION_MAJOR:INTERNAL=
+PYTHON_VERSION_MINOR:INTERNAL=
+Python_ADDITIONAL_VERSIONS:INTERNAL=3.9;3.8;3.7;3.6;3.5;3.4
 //ADVANCED property for variable: ZLIB_INCLUDE_DIR
 ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
 ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
 ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+//Result of TRY_COMPILE
+result:INTERNAL=TRUE
 
