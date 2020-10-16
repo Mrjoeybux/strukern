@@ -1,6 +1,0 @@
-setup.py
-strukern.egg-info/PKG-INFO
-strukern.egg-info/SOURCES.txt
-strukern.egg-info/dependency_links.txt
-strukern.egg-info/not-zip-safe
-strukern.egg-info/top_level.txt

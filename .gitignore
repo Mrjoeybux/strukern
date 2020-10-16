@@ -1,7 +1,0 @@
-compile_commands.json
-cmake-build-debug/
-build/
-.idea/
-.vscode/
-.clangd/index/
-.clang-format
