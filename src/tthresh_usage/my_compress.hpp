@@ -11,10 +11,10 @@
 
 #include <fstream>
 #include <vector>
-#include "encode.hpp"
-#include "tthresh.hpp"
-#include "tucker.hpp"
-#include "io.hpp"
+#include "../lib/tthresh/encode.hpp"
+#include "../lib/tthresh/tthresh.hpp"
+#include "../lib/tthresh/tucker.hpp"
+#include "../lib/tthresh/io.hpp"
 #include <unistd.h>
 #include <math.h>
 #include <Eigen/Dense>

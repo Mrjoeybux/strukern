@@ -1,7 +1,7 @@
 #ifndef GRAPH
 #define GRAPH
 #include "common.h"
-#include "src/env/ged_env.hpp"
+#include "../lib/gedlib/src/env/ged_env.hpp"
 #include <functional>
 #include <iostream>
 #include <optional>

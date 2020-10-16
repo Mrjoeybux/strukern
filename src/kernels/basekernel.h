@@ -4,6 +4,7 @@
 #include "../domain/common.h"
 #include <iostream>
 #include <Core>
+//#include <eigen3/Eigen/Core>
 #include <memory>
 #include <Dense>
 #include <Eigenvalues>
@@ -16,8 +17,8 @@
 #ifndef LSAPE_IndexType
 #define LSAPE_IndexType std::size_t
 #endif
-
-#include <lsap.h>
+#include "lsap.h"
+//#include "../lib/gedlib/ext/lsape.5/include/lsap.h"
 
 using namespace std;
 using namespace Eigen;

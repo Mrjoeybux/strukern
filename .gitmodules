@@ -1,0 +1,8 @@
+[submodule "src/libs/pybind11"]
+	path = src/libs/pybind11
+	url = git@github.com:pybind/pybind11.git
+	branch = master
+[submodule "src/libs/gedlib"]
+	path = src/libs/gedlib
+	url = https://github.com/dbblumenthal/gedlib.git
+	branch = master

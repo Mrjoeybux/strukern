@@ -1,7 +1,7 @@
 //
 // Created by Mrjoeybux on 23/09/2020.
 //
-#include "../tthresh/my_compress.hpp"
+#include "../tthresh_usage/my_compress.hpp"
 #include "../kernels/basekernel.h"
 #ifndef STRUKERN_TENSORKERNEL_H
 #define STRUKERN_TENSORKERNEL_H
