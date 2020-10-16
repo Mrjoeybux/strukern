@@ -32,6 +32,8 @@ include_directories(${GEDLIB}
                 ${EIGEN3_INCLUDE_DIR}
                 ${DLIB}
                 )
+
+
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 message(STATUS "INCLUDED DIRECTORIES:")
 foreach(dir ${dirs})
@@ -44,7 +46,6 @@ set(FANN_LIB ${GEDLIB}/ext/fann.2.2.0/lib/)
 set(GEDLIB_GXL_LIB ${GEDLIB}/lib/)
 
 link_directories(${GEDLIB_GXL_LIB} ${NOMAD_LIB} ${LIBSVM_LIB} ${FANN_LIB} ${PYTHON_LIBRARIES})
-set(strukern_src main.cpp)
 pybind11_add_module(strukern binding/strukern.cpp)
 
 set(DLIB_LINK ${DLIB}/build/dlib/libdlib.so)
