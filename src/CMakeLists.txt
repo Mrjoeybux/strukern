@@ -1,17 +1,13 @@
 cmake_minimum_required (VERSION 3.0)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 17)
-#set(SOURCE_DIR "./")
-#include_directories({SOURCE_DIR})
-message("${CMAKE_SOURCE_DIR}")
 project(strukern)
-find_package(PythonLibs REQUIRED)
-add_subdirectory(libs/pybind11)
-find_package(ZLIB)
-#find_package(JPEG REQUIRED)
-#find_package (Eigen3 REQUIRED NO_MODULE)
 
-#set(GEDLIB /home/Mrjoeybux/programs/gedlib/)
+find_package(PythonLibs REQUIRED)
+find_package(pybind11 REQUIRED)
+find_package(ZLIB)
+find_package (Eigen3 REQUIRED NO_MODULE)
+
 set(GEDLIB ${CMAKE_SOURCE_DIR}/libs/gedlib/)
 set(GEDLIB_BOOST ${GEDLIB}/ext/boost.1.69.0/)
 set(GEDLIB_EIGEN ${GEDLIB}/ext/eigen.3.3.4/Eigen/)
@@ -20,9 +16,8 @@ set(GEDLIB_NOMAD_SGTE ${GEDLIB}/ext/nomad.3.8.1/ext/sgtelib/src/)
 set(GEDLIB_LSAPE ${GEDLIB}/ext/lsape.5/include/)
 set(GEDLIB_LIBSVM ${GEDLIB}/ext/libsvm.3.22/)
 set(GEDLIB_FANN ${GEDLIB}/ext/fann.2.2.0/include/)
-#find_package(dlib REQUIRED)
+
 set(DLIB ${CMAKE_SOURCE_DIR}/libs/dlib/)
-#set(DLIB /home/Mrjoeybux/coding/libs/dlib-19.16)
 
 include_directories(${GEDLIB} 
                 ${GEDLIB_BOOST} 
@@ -43,7 +38,6 @@ foreach(dir ${dirs})
         message(STATUS "${dir}")
 endforeach()
 
-
 set(NOMAD_LIB ${GEDLIB}/ext/nomad.3.8.1/lib/)
 set(LIBSVM_LIB ${GEDLIB}/ext/libsvm.3.22/)
 set(FANN_LIB ${GEDLIB}/ext/fann.2.2.0/lib/)
@@ -58,5 +52,5 @@ set(NOMAD_LINK ${GEDLIB}/ext/nomad.3.8.1/lib/libnomad.so)
 set(LIBSVM_LINK ${GEDLIB}/ext/libsvm.3.22/libsvm.so)
 set(FANN_LINK ${GEDLIB}/ext/fann.2.2.0/lib/libdoublefann.so)
 set(GEDLIB_GXL_LINK ${GEDLIB}/lib/libgxlgedlib.so)
-target_link_libraries(strukern PRIVATE ${GEDLIB_GXL_LINK} ${ZLIB_LIBRARIES} ${NOMAD_LINK} ${LIBSVM_LINK} ${FANN_LINK} ${JPEG_LIBRARIES} ${DLIB_LINK})# domain kernels)
+target_link_libraries(strukern PRIVATE ${GEDLIB_GXL_LINK} ${ZLIB_LIBRARIES} ${NOMAD_LINK} ${LIBSVM_LINK} ${FANN_LINK} ${JPEG_LIBRARIES} ${DLIB_LINK})
 
