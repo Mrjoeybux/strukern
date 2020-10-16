@@ -5,7 +5,7 @@
 
 ### Compiling
 - If you use a virtual python environment, make sure to activate it.
-- Clone repo: `git clone --recurse-submodules -j4 git@github.com:Mrjoeybux/strukern.git`
+- Clone repo: `git clone git@github.com:Mrjoeybux/strukern.git`
 - Let `<STRUKERN_ROOT>` be the path to the root directory of the strukern project.
 
 
