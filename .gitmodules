@@ -7,3 +7,6 @@
 [submodule "src/libs/gedlib"]
 	path = src/libs/gedlib
 	url = https://github.com/dbblumenthal/gedlib.git
+[submodule "src/libs/hungarian-algorithm-cpp"]
+	path = src/libs/hungarian-algorithm-cpp
+	url = https://github.com/mcximing/hungarian-algorithm-cpp.git
