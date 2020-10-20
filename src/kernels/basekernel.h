@@ -33,6 +33,8 @@ struct KernelParams {
     double RBFSigma;
     int PolynomialPower;
     int TensorConcatDim;
+    int MolecularRadius;
+    double AssignmentDecay;
 };
 
 #define NUMERICAL_PRECISION 1e-12

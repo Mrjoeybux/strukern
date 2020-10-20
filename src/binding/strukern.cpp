@@ -53,7 +53,9 @@ void declare_structs(py::module &m) {
       .def_readwrite("MolecularEditCosts", &KernelParams::MolecularEditCosts)
       .def_readwrite("RBFSigma", &KernelParams::RBFSigma)
       .def_readwrite("TensorCompressionLevel", &KernelParams::TensorCompressionLevel)
-      .def_readwrite("TensorConcatDim", &KernelParams::TensorConcatDim);
+      .def_readwrite("TensorConcatDim", &KernelParams::TensorConcatDim)
+      .def_readwrite("MolecularRadius", &KernelParams::MolecularRadius)
+      .def_readwrite("AssignmentDecay", &KernelParams::AssignmentDecay);
 
   py::enum_<CompressionDistanceMeasure>(m, "CompressionDistanceMeasure", py::arithmetic())
       .value("NCD", CompressionDistanceMeasure::NCD, "Normalised Compression Distance.")
@@ -105,18 +107,19 @@ void declare_multiinstance(py::module &m, string &name) {
 
 PYBIND11_MODULE(strukern, m) {
   auto dt = m.def_submodule("datastructures");
-  string i = "i", d = "d", s = "s";
-  declare_graph<int, int>(dt, i, i);
-  declare_graph<double, double>(dt, d, d);
-  declare_graph<string, string>(dt, s, s);
+  string i = "i", d = "d", s = "s", v = "v";
+  declare_graph<vector<double>, vector<double>>(dt, v, v);
+  //declare_graph<double, double>(dt, d, d);
+  //declare_graph<string, string>(dt, s, s);
   declare_structs(dt);
 
   auto bk = m.def_submodule("abstractbasekernels");
-  string str = "String", img = "Image", vec = "Vector", tens = "Tensor";
+  string str = "String", img = "Image", vec = "Vector", tens = "Tensor", graph = "Graph";
   declare_abstractbasekernel<string>(bk, str);
   //declare_abstractbasekernel<ImageMat>(bk, img);
   declare_abstractbasekernel<VectorXd>(bk, vec);
   declare_abstractbasekernel<Tensor>(bk, tens);
+  declare_abstractbasekernel<UndirectedGraph<vector<double>, vector<double>>>(bk, graph);
   declare_abstractcompressionkernel<string>(bk, str);
   //declare_abstractcompressionkernel<ImageMat>(bk, img);
   declare_abstractcompressionkernel<Tensor>(bk, tens);
@@ -133,6 +136,7 @@ PYBIND11_MODULE(strukern, m) {
 
   auto tk = m.def_submodule("tensorkernels");
   declare_tensorkernels(tk);
+
 
   auto gk = m.def_submodule("graphkernels");
   string gedname = "GED";

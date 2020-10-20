@@ -9,6 +9,7 @@ find_package(ZLIB)
 find_package (Eigen3 REQUIRED NO_MODULE)
 
 set(GEDLIB ${CMAKE_SOURCE_DIR}/libs/gedlib/)
+set(HUNGARIAN ${CMAKE_SOURCE_DIR}/libs/hungarian-algorithm-cpp)
 set(GEDLIB_BOOST ${GEDLIB}/ext/boost.1.69.0/)
 set(GEDLIB_EIGEN ${GEDLIB}/ext/eigen.3.3.4/Eigen/)
 set(GEDLIB_NOMAD ${GEDLIB}/ext/nomad.3.8.1/src/)
@@ -31,6 +32,7 @@ include_directories(${GEDLIB}
                 ${JPEG_INCLUDE_DIR}
                 ${EIGEN3_INCLUDE_DIR}
                 ${DLIB}
+                ${HUNGARIAN}
                 )
 
 
@@ -44,8 +46,9 @@ set(NOMAD_LIB ${GEDLIB}/ext/nomad.3.8.1/lib/)
 set(LIBSVM_LIB ${GEDLIB}/ext/libsvm.3.22/)
 set(FANN_LIB ${GEDLIB}/ext/fann.2.2.0/lib/)
 set(GEDLIB_GXL_LIB ${GEDLIB}/lib/)
+#set(HUNGARIAN_LIB ${CMAKE_SOURCE_DIR}/libs/hungarian-algorithm-cpp/)
 
-link_directories(${GEDLIB_GXL_LIB} ${NOMAD_LIB} ${LIBSVM_LIB} ${FANN_LIB} ${PYTHON_LIBRARIES})
+link_directories(${GEDLIB_GXL_LIB} ${NOMAD_LIB} ${LIBSVM_LIB} ${FANN_LIB} ${PYTHON_LIBRARIES}) #${HUNGARIAN_LIB})
 pybind11_add_module(strukern binding/strukern.cpp)
 
 set(DLIB_LINK ${DLIB}/build/dlib/libdlib.so)
@@ -53,5 +56,6 @@ set(NOMAD_LINK ${GEDLIB}/ext/nomad.3.8.1/lib/libnomad.so)
 set(LIBSVM_LINK ${GEDLIB}/ext/libsvm.3.22/libsvm.so)
 set(FANN_LINK ${GEDLIB}/ext/fann.2.2.0/lib/libdoublefann.so)
 set(GEDLIB_GXL_LINK ${GEDLIB}/lib/libgxlgedlib.so)
-target_link_libraries(strukern PRIVATE ${GEDLIB_GXL_LINK} ${ZLIB_LIBRARIES} ${NOMAD_LINK} ${LIBSVM_LINK} ${FANN_LINK} ${JPEG_LIBRARIES} ${DLIB_LINK})
+#set(HUNGARIAN_LINK ${CMAKE_SOURCE_DIR}/libs/hungarian-algorithm-cpp/hung.o)
+target_link_libraries(strukern PRIVATE ${GEDLIB_GXL_LINK} ${ZLIB_LIBRARIES} ${NOMAD_LINK} ${LIBSVM_LINK} ${FANN_LINK} ${JPEG_LIBRARIES} ${DLIB_LINK})# ${HUNGARIAN_LINK})
 
