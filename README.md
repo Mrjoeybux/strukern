@@ -21,7 +21,7 @@
 ```
 mkdir build
 cd build
-graph library
+cmake ..
 make
 ```
 
