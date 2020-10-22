@@ -70,6 +70,7 @@ def test_li():
                                "d2": 1}
     print(li.dot(x, y, params))
 
+
 def test_ppm():
     x = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
@@ -114,6 +115,7 @@ def test_tthresh():
     #val = cub.computeKernelMatrix([x1, x2], params)
     #val = cub.dot(x1, x3, params)
     print(val)
+
 
 def smiles_to_graph(smiles):
     mol = rdkit.Chem.MolFromSmiles(smiles)
@@ -300,7 +302,6 @@ def test_graph():
     params = {"sigma": 10, "molecular_radius": 2, "decay": 0.1}
     oma_py = OptimalMoleculeAssignmentKernel(SubStructFeatureKernel())
     print(oma_py.dot(rdkit.Chem.MolFromSmiles(benzene), rdkit.Chem.MolFromSmiles(cyclohexane), params))
-
 
 
 if __name__ == "__main__":
