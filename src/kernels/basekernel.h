@@ -349,7 +349,7 @@ MatrixXd AbstractCompressionKernel<T>::computeRectangularKernelMatrix(const vect
 
 template<typename T>
 double AbstractCompressionKernel<T>::NCD(const double &comp_x1, const double &comp_x2, const double &comp_x1_x2, const double &comp_x2_x1) const{
-  return max(comp_x1_x2 - comp_x1, comp_x2_x1 - comp_x2) / max(comp_x1, comp_x2);
+  return (((comp_x1_x2 + comp_x2_x1) / 2) - min(comp_x1, comp_x2)) / max(comp_x1, comp_x2);
 }
 
 template<typename T>

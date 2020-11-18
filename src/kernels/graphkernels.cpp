@@ -18,15 +18,8 @@ double OptimalMolecularAssignmentKernel<node_label_type, edge_label_type>::opt_a
   vector<vector<double>> costmatrix;
   double val, max_element = 0.0;
   for (uint i = 0; i < N; i++) {
-    cout << "[";
     for (uint j = 0; j < M; j++) {
       val = this->neighbour_kernel(x1, x2, i, j, params);
-      if(j == M - 1){
-        cout << val << "]" << endl;
-      }
-      else{
-        cout << val << ", ";
-      }
       costmatrixrow.push_back(val);
       if (val > max_element) {
         max_element = val;
